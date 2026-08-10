@@ -21,6 +21,20 @@
             }
         }
     </script>
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+    </style>
 </head>
 <body class="bg-background text-foreground font-sans antialiased selection:bg-cyan-500 selection:text-slate-950">
 
@@ -59,13 +73,13 @@
                 <i class="fa-solid fa-award"></i> Official Training & SOC Partner
             </div>
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
-                Master Ethical Hacking, Forensics, SIEM/XDR & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Incident Response</span>
+                Master Cybersecurity, SOC Operations & <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Corporate Communication</span>
             </h1>
             <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Gain job-ready technical skills with rigorous, lab-intensive training in offensive security, defensive SOC operations, and threat hunting.
+                Gain job-ready technical skills and elite corporate soft skills with rigorous training designed for high-paying industry placements.
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#courses" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-8 py-4 rounded-xl font-bold transition shadow-xl shadow-cyan-500/20">Explore All 6 Courses</a>
+                <a href="#courses" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-8 py-4 rounded-xl font-bold transition shadow-xl shadow-cyan-500/20">Explore All Programs</a>
                 <a href="#contact" class="border border-slate-700 hover:border-slate-500 bg-slate-900 px-8 py-4 rounded-xl font-bold transition">Book Free Counseling</a>
             </div>
         </div>
@@ -80,7 +94,7 @@
                     SafeByte Security is a premier cybersecurity training institute dedicated to bridging the critical skills gap between theoretical certifications and real-world employment. 
                 </p>
                 <p class="text-slate-400 mb-6 leading-relaxed">
-                    Led by active industry professionals, our training programs combine rigorous official curricula (like EC-Council and CompTIA) with live sandbox environments, terminal-heavy labs, and mentorship designed to prepare you for high-paying roles in ethical hacking, digital forensics, and SOC operations.
+                    Alongside intense technical labs in ethical hacking, forensics, and SOC operations, we include professional corporate communication training so our students excel in HR interviews and workplace interactions.
                 </p>
                 <div class="grid grid-cols-2 gap-4">
                     <div class="bg-card p-4 rounded-xl border border-slate-800">
@@ -97,13 +111,13 @@
                 <div class="absolute -right-10 -bottom-10 h-48 w-48 rounded-full bg-cyan-500/10 blur-[60px]"></div>
                 <h3 class="text-xl font-bold mb-4 text-cyan-400"><i class="fa-solid fa-bullseye mr-2"></i> Our Mission</h3>
                 <p class="text-slate-300 text-sm mb-6 leading-relaxed">
-                    To build elite, employment-ready cybersecurity professionals equipped to handle modern corporate threats, advanced penetration tests, and complex digital investigations.
+                    To build elite, employment-ready cybersecurity professionals equipped with both technical mastery and executive-level corporate communication.
                 </p>
                 <h3 class="text-xl font-bold mb-4 text-cyan-400"><i class="fa-solid fa-shield-halved mr-2"></i> What We Stand For</h3>
                 <ul class="space-y-2 text-sm text-slate-300">
                     <li>✓ Hands-on, zero-fluff technical training</li>
-                    <li>✓ Official exam preparation & support</li>
-                    <li>✓ Small batch sizes for personalized attention</li>
+                    <li>✓ Corporate communication & interview readiness</li>
+                    <li>✓ Transparent competitive fee structure</li>
                 </ul>
             </div>
         </div>
@@ -112,127 +126,311 @@
     <section id="courses" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">Professional Certification & Skill Programs</h2>
-            <p class="text-slate-400 max-w-xl mx-auto">Designed for real-world employment in security operations, penetration testing, and digital forensics.</p>
+            <p class="text-slate-400 max-w-xl mx-auto">Click any course card to view an overview of the syllabus.</p>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             
             <div class="bg-card border border-purple-500/30 rounded-3xl p-8 flex flex-col justify-between hover:border-purple-400 transition shadow-xl">
                 <div>
-                    <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-between mb-6">
                         <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-500/10 border border-purple-500/30 text-purple-400 text-xl">
                             <i class="fa-solid fa-graduation-cap"></i>
                         </div>
-                        <div>
-                            <span class="text-purple-400 text-xs font-bold uppercase tracking-wider">Foundation</span>
-                            <h3 class="text-xl font-bold">CompTIA Security+</h3>
-                        </div>
+                        <span class="text-cyan-400 font-black text-lg bg-cyan-500/10 px-3 py-1 rounded-xl border border-cyan-500/20">₹28,000</span>
                     </div>
+                    <span class="text-purple-400 text-xs font-bold uppercase tracking-wider block mb-1">Foundation</span>
+                    <h3 class="text-xl font-bold mb-3">CompTIA Security+</h3>
                     <p class="text-slate-400 text-sm mb-6 leading-relaxed">Core baseline certification for launching a cybersecurity career. Covers risk management, cryptography, and network defense.</p>
                 </div>
-                <a href="comptia-security.html" class="block text-center bg-purple-600 hover:bg-purple-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md">
-                    View Syllabus & Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
+                <button onclick="openModal('comptiaModal')" class="w-full text-center bg-purple-600 hover:bg-purple-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md cursor-pointer">
+                    View Syllabus Overview <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
             </div>
 
             <div class="bg-card border border-cyan-500/30 rounded-3xl p-8 flex flex-col justify-between hover:border-cyan-400 transition shadow-xl">
                 <div>
-                    <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-between mb-6">
                         <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xl">
                             <i class="fa-solid fa-user-secret"></i>
                         </div>
-                        <div>
-                            <span class="text-cyan-400 text-xs font-bold uppercase tracking-wider">Offensive Security</span>
-                            <h3 class="text-xl font-bold">Certified Ethical Hacker (CEH)</h3>
-                        </div>
+                        <span class="text-cyan-400 font-black text-lg bg-cyan-500/10 px-3 py-1 rounded-xl border border-cyan-500/20">₹35,000</span>
                     </div>
+                    <span class="text-cyan-400 text-xs font-bold uppercase tracking-wider block mb-1">Offensive Security</span>
+                    <h3 class="text-xl font-bold mb-3">Certified Ethical Hacker (CEH)</h3>
                     <p class="text-slate-400 text-sm mb-6 leading-relaxed">Master 20+ attack domains, vulnerability assessment, web app hacking, and advanced penetration testing tools.</p>
                 </div>
-                <a href="ceh.html" class="block text-center bg-cyan-500 hover:bg-cyan-400 text-slate-950 py-3 rounded-xl font-bold text-sm transition shadow-md">
-                    View Syllabus & Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
+                <button onclick="openModal('cehModal')" class="w-full text-center bg-cyan-500 hover:bg-cyan-400 text-slate-950 py-3 rounded-xl font-bold text-sm transition shadow-md cursor-pointer">
+                    View Syllabus Overview <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
             </div>
 
             <div class="bg-card border border-blue-500/30 rounded-3xl p-8 flex flex-col justify-between hover:border-blue-400 transition shadow-xl">
                 <div>
-                    <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-between mb-6">
                         <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-500/10 border border-blue-500/30 text-blue-400 text-xl">
                             <i class="fa-solid fa-file-magnifying-glass"></i>
                         </div>
-                        <div>
-                            <span class="text-blue-400 text-xs font-bold uppercase tracking-wider">Digital Forensics</span>
-                            <h3 class="text-xl font-bold">Forensic Investigator (CHFI)</h3>
-                        </div>
+                        <span class="text-cyan-400 font-black text-lg bg-cyan-500/10 px-3 py-1 rounded-xl border border-cyan-500/20">₹32,000</span>
                     </div>
+                    <span class="text-blue-400 text-xs font-bold uppercase tracking-wider block mb-1">Digital Forensics</span>
+                    <h3 class="text-xl font-bold mb-3">Forensic Investigator (CHFI)</h3>
                     <p class="text-slate-400 text-sm mb-6 leading-relaxed">Master hard disk data recovery, anti-forensics bypass, dark web investigation, and legal evidence acquisition.</p>
                 </div>
-                <a href="chfi.html" class="block text-center bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md">
-                    View Syllabus & Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
+                <button onclick="openModal('chfiModal')" class="w-full text-center bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md cursor-pointer">
+                    View Syllabus Overview <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
             </div>
 
             <div class="bg-card border border-emerald-500/30 rounded-3xl p-8 flex flex-col justify-between hover:border-emerald-400 transition shadow-xl">
                 <div>
-                    <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-between mb-6">
                         <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xl">
                             <i class="fa-solid fa-triangle-exclamation"></i>
                         </div>
-                        <div>
-                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Defensive / SOC</span>
-                            <h3 class="text-xl font-bold">Incident Response Analyst</h3>
-                        </div>
+                        <span class="text-cyan-400 font-black text-lg bg-cyan-500/10 px-3 py-1 rounded-xl border border-cyan-500/20">₹29,000</span>
                     </div>
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider block mb-1">Defensive / SOC</span>
+                    <h3 class="text-xl font-bold mb-3">Incident Response Analyst</h3>
                     <p class="text-slate-400 text-sm mb-6 leading-relaxed">Master SOC operations, threat detection, log triage, containment strategies, and corporate incident handling.</p>
                 </div>
-                <a href="incident-response.html" class="block text-center bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md">
-                    View Syllabus & Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
+                <button onclick="openModal('irModal')" class="w-full text-center bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md cursor-pointer">
+                    View Syllabus Overview <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
             </div>
 
             <div class="bg-card border border-amber-500/30 rounded-3xl p-8 flex flex-col justify-between hover:border-amber-400 transition shadow-xl">
                 <div>
-                    <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-between mb-6">
                         <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xl">
                             <i class="fa-solid fa-bug"></i>
                         </div>
-                        <div>
-                            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Risk & Assessment</span>
-                            <h3 class="text-xl font-bold">Vulnerability Management</h3>
-                        </div>
+                        <span class="text-cyan-400 font-black text-lg bg-cyan-500/10 px-3 py-1 rounded-xl border border-cyan-500/20">₹26,000</span>
                     </div>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider block mb-1">Risk & Assessment</span>
+                    <h3 class="text-xl font-bold mb-3">Vulnerability Management</h3>
                     <p class="text-slate-400 text-sm mb-6 leading-relaxed">Learn enterprise asset discovery, vulnerability scanner configuration (Nessus/Qualys), risk scoring (CVSS), and patch prioritization.</p>
                 </div>
-                <a href="vulnerability-management.html" class="block text-center bg-amber-600 hover:bg-amber-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md">
-                    View Syllabus & Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
+                <button onclick="openModal('vmModal')" class="w-full text-center bg-amber-600 hover:bg-amber-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md cursor-pointer">
+                    View Syllabus Overview <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
             </div>
 
             <div class="bg-card border border-rose-500/30 rounded-3xl p-8 flex flex-col justify-between hover:border-rose-400 transition shadow-xl">
                 <div>
-                    <div class="flex items-center gap-4 mb-6">
+                    <div class="flex items-center justify-between mb-6">
                         <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xl">
                             <i class="fa-solid fa-chart-line"></i>
                         </div>
-                        <div>
-                            <span class="text-rose-400 text-xs font-bold uppercase tracking-wider">Advanced SOC</span>
-                            <h3 class="text-xl font-bold">SIEM & XDR Operations</h3>
-                        </div>
+                        <span class="text-cyan-400 font-black text-lg bg-cyan-500/10 px-3 py-1 rounded-xl border border-cyan-500/20">₹34,000</span>
                     </div>
-                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Hands-on experience with modern SIEM log analysis, correlation rules, threat hunting, and Extended Detection & Response (XDR) platforms.</p>
+                    <span class="text-rose-400 text-xs font-bold uppercase tracking-wider block mb-1">Advanced SOC</span>
+                    <h3 class="text-xl font-bold mb-3">SIEM & XDR Operations</h3>
+                    <p class="text-slate-400 text-sm mb-6 leading-relaxed">Hands-on experience with modern SIEM log analysis, correlation rules, threat hunting, and Extended Detection & Response platforms.</p>
                 </div>
-                <a href="siem-xdr.html" class="block text-center bg-rose-600 hover:bg-rose-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md">
-                    View Syllabus & Details <i class="fa-solid fa-arrow-right ml-1"></i>
-                </a>
+                <button onclick="openModal('siemModal')" class="w-full text-center bg-rose-600 hover:bg-rose-500 text-white py-3 rounded-xl font-bold text-sm transition shadow-md cursor-pointer">
+                    View Syllabus Overview <i class="fa-solid fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+
+            <div class="bg-card border border-teal-500/30 rounded-3xl p-8 flex flex-col justify-between hover:border-teal-400 transition shadow-xl lg:col-span-3">
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-teal-500/10 border border-teal-500/30 text-teal-400 text-xl flex-shrink-0">
+                                <i class="fa-solid fa-users-rectangle"></i>
+                            </div>
+                            <div>
+                                <span class="text-teal-400 text-xs font-bold uppercase tracking-wider">Corporate Readiness</span>
+                                <h3 class="text-2xl font-bold">Corporate Soft Skills & Communication</h3>
+                            </div>
+                        </div>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Designed specifically for cybersecurity aspirants. Master executive email writing, incident report drafting, client communication etiquette, mock HR interviews, body language, and professional workplace negotiations to land high-paying corporate roles with confidence.
+                        </p>
+                    </div>
+                    <div class="text-center md:text-right flex flex-col items-center md:items-end justify-center gap-3">
+                        <span class="text-cyan-400 font-black text-2xl bg-cyan-500/10 px-4 py-1.5 rounded-2xl border border-cyan-500/20">₹15,000</span>
+                        <button onclick="openModal('softModal')" class="w-full md:w-auto bg-teal-600 hover:bg-teal-500 text-white px-6 py-3 rounded-xl font-bold text-sm transition shadow-md inline-block text-center cursor-pointer">
+                            View Syllabus Overview <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
 
         </div>
     </section>
 
+    <div id="comptiaModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-card border border-purple-500/40 rounded-3xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('comptiaModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-purple-400 text-xs font-bold uppercase tracking-wider">Foundation Course</span>
+            <h3 class="text-2xl font-bold mb-4">CompTIA Security+ Syllabus Overview</h3>
+            <p class="text-cyan-400 text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 p-3 rounded-xl mb-4">
+                <i class="fa-solid fa-circle-info mr-1"></i> Note: This is just the overview of the syllabus. For the full detailed syllabus, please reach out to us!
+            </p>
+            <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                <li>✓ 1. Threats, Attacks, and Vulnerabilities</li>
+                <li>✓ 2. Architecture and Design Principles</li>
+                <li>✓ 3. Implementation of Cryptography & PKI</li>
+                <li>✓ 4. Identity and Access Management (IAM)</li>
+                <li>✓ 5. Risk Management and Incident Response</li>
+            </ul>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-6">
+                <span class="text-cyan-400 font-bold text-xl">Fee: ₹28,000</span>
+                <a href="#contact" onclick="closeModal('comptiaModal')" class="bg-purple-600 hover:bg-purple-500 text-white px-6 py-3 rounded-xl font-bold text-sm">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="cehModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-card border border-cyan-500/40 rounded-3xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('cehModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-cyan-400 text-xs font-bold uppercase tracking-wider">Offensive Security</span>
+            <h3 class="text-2xl font-bold mb-4">Certified Ethical Hacker (CEH v13) Overview</h3>
+            <p class="text-cyan-400 text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 p-3 rounded-xl mb-4">
+                <i class="fa-solid fa-circle-info mr-1"></i> Note: This is just the overview of the syllabus. For the full detailed syllabus, please reach out to us!
+            </p>
+            <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                <li>✓ 1. Footprinting and Reconnaissance</li>
+                <li>✓ 2. Scanning Networks & Enumeration</li>
+                <li>✓ 3. System Hacking & Malware Threats</li>
+                <li>✓ 4. Web Application & API Hacking</li>
+                <li>✓ 5. Cloud, IoT, and OT Security Pentesting</li>
+            </ul>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-6">
+                <span class="text-cyan-400 font-bold text-xl">Fee: ₹35,000</span>
+                <a href="#contact" onclick="closeModal('cehModal')" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 px-6 py-3 rounded-xl font-bold text-sm">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="chfiModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-card border border-blue-500/40 rounded-3xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('chfiModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-blue-400 text-xs font-bold uppercase tracking-wider">Digital Forensics</span>
+            <h3 class="text-2xl font-bold mb-4">Computer Hacking Forensic Investigator Overview</h3>
+            <p class="text-cyan-400 text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 p-3 rounded-xl mb-4">
+                <i class="fa-solid fa-circle-info mr-1"></i> Note: This is just the overview of the syllabus. For the full detailed syllabus, please reach out to us!
+            </p>
+            <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                <li>✓ 1. Computer Forensics & Investigation Process</li>
+                <li>✓ 2. Hard Disk & Storage Device Acquisition</li>
+                <li>✓ 3. Operating System Forensics (Windows/Linux/Mac)</li>
+                <li>✓ 4. Network Forensics & Investigating Web Attacks</li>
+                <li>✓ 5. Dark Web & Cloud Forensics Analysis</li>
+            </ul>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-6">
+                <span class="text-cyan-400 font-bold text-xl">Fee: ₹32,000</span>
+                <a href="#contact" onclick="closeModal('chfiModal')" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-bold text-sm">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="irModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-card border border-emerald-500/40 rounded-3xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('irModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-emerald-400 text-xs font-bold uppercase tracking-wider">Defensive / SOC</span>
+            <h3 class="text-2xl font-bold mb-4">Incident Response & SOC Analyst Overview</h3>
+            <p class="text-cyan-400 text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 p-3 rounded-xl mb-4">
+                <i class="fa-solid fa-circle-info mr-1"></i> Note: This is just the overview of the syllabus. For the full detailed syllabus, please reach out to us!
+            </p>
+            <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                <li>✓ 1. SOC Operations & Architecture</li>
+                <li>✓ 2. Log Triage & Anomaly Detection</li>
+                <li>✓ 3. Threat Intelligence & Indicator of Compromise (IoC)</li>
+                <li>✓ 4. Incident Containment & Eradication Strategies</li>
+                <li>✓ 5. Post-Incident Reporting & Root Cause Analysis</li>
+            </ul>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-6">
+                <span class="text-cyan-400 font-bold text-xl">Fee: ₹29,000</span>
+                <a href="#contact" onclick="closeModal('irModal')" class="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-3 rounded-xl font-bold text-sm">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="vmModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-card border border-amber-500/40 rounded-3xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('vmModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Risk & Assessment</span>
+            <h3 class="text-2xl font-bold mb-4">Vulnerability Management Overview</h3>
+            <p class="text-cyan-400 text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 p-3 rounded-xl mb-4">
+                <i class="fa-solid fa-circle-info mr-1"></i> Note: This is just the overview of the syllabus. For the full detailed syllabus, please reach out to us!
+            </p>
+            <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                <li>✓ 1. Enterprise Asset Discovery & Inventory</li>
+                <li>✓ 2. Vulnerability Scanner Setup (Nessus / Qualys)</li>
+                <li>✓ 3. CVSS Scoring & Risk Prioritization</li>
+                <li>✓ 4. Patch Management & Remediation Tracking</li>
+                <li>✓ 5. Executive Vulnerability Reporting</li>
+            </ul>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-6">
+                <span class="text-cyan-400 font-bold text-xl">Fee: ₹26,000</span>
+                <a href="#contact" onclick="closeModal('vmModal')" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-3 rounded-xl font-bold text-sm">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="siemModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-card border border-rose-500/40 rounded-3xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('siemModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-rose-400 text-xs font-bold uppercase tracking-wider">Advanced SOC</span>
+            <h3 class="text-2xl font-bold mb-4">SIEM & XDR Operations Overview</h3>
+            <p class="text-cyan-400 text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 p-3 rounded-xl mb-4">
+                <i class="fa-solid fa-circle-info mr-1"></i> Note: This is just the overview of the syllabus. For the full detailed syllabus, please reach out to us!
+            </p>
+            <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                <li>✓ 1. SIEM Architecture & Log Ingestion</li>
+                <li>✓ 2. Writing Custom Correlation & Detection Rules</li>
+                <li>✓ 3. Threat Hunting in Enterprise Networks</li>
+                <li>✓ 4. Extended Detection & Response (XDR) Integration</li>
+                <li>✓ 5. Automated Playbooks & SOC Automation</li>
+            </ul>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-6">
+                <span class="text-cyan-400 font-bold text-xl">Fee: ₹34,000</span>
+                <a href="#contact" onclick="closeModal('siemModal')" class="bg-rose-600 hover:bg-rose-500 text-white px-6 py-3 rounded-xl font-bold text-sm">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="softModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-card border border-teal-500/40 rounded-3xl max-w-2xl w-full p-8 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('softModal')" class="absolute top-6 right-6 text-slate-400 hover:text-white text-xl cursor-pointer"><i class="fa-solid fa-xmark"></i></button>
+            <span class="text-teal-400 text-xs font-bold uppercase tracking-wider">Corporate Readiness</span>
+            <h3 class="text-2xl font-bold mb-4">Corporate Soft Skills & Communication Overview</h3>
+            <p class="text-cyan-400 text-xs font-semibold bg-cyan-500/10 border border-cyan-500/20 p-3 rounded-xl mb-4">
+                <i class="fa-solid fa-circle-info mr-1"></i> Note: This is just the overview of the syllabus. For the full detailed syllabus, please reach out to us!
+            </p>
+            <ul class="space-y-3 text-slate-300 text-sm mb-8">
+                <li>✓ 1. Executive Written Communication & Email Etiquette</li>
+                <li>✓ 2. Drafting Professional Incident Post-Mortem Reports</li>
+                <li>✓ 3. Client Presentation & Communication Etiquette</li>
+                <li>✓ 4. Behavioral HR & Technical Interview Mastery</li>
+                <li>✓ 5. 1-on-1 Mock Interviews with Feedback</li>
+            </ul>
+            <div class="flex justify-between items-center border-t border-slate-800 pt-6">
+                <span class="text-cyan-400 font-bold text-xl">Fee: ₹15,000</span>
+                <a href="#contact" onclick="closeModal('softModal')" class="bg-teal-600 hover:bg-teal-500 text-white px-6 py-3 rounded-xl font-bold text-sm">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
     <section id="why-us" class="py-24 px-6 bg-slate-900/50 border-y border-cyan-500/20">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4">Why Choose SafeByte Security?</h2>
-                <p class="text-slate-400">We bridge the gap between theoretical certifications and real-world employment readiness.</p>
+                <p class="text-slate-400">We bridge the gap between technical certifications, executive communication, and real-world employment.</p>
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-card border border-slate-800 p-8 rounded-2xl">
@@ -247,34 +445,97 @@
                 </div>
                 <div class="bg-card border border-slate-800 p-8 rounded-2xl">
                     <div class="h-12 w-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-xl mb-6"><i class="fa-solid fa-briefcase"></i></div>
-                    <h3 class="text-xl font-bold mb-3">Exam & Career Support</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Official exam voucher assistance, resume-building guidance, and interview prep.</p>
+                    <h3 class="text-xl font-bold mb-3">Interview & Soft Skills</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Dedicated corporate communication training, resume-building guidance, and mock technical/HR interviews.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="testimonials" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
+    <section id="testimonials" class="py-24 px-6 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Students Say</h2>
             <p class="text-slate-400">Success stories from certified security professionals trained by us.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-card border border-slate-800 p-8 rounded-3xl relative">
-                <div class="text-cyan-400 text-3xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
-                <p class="text-slate-300 mb-6 italic">"SafeByte Security provided exceptional hands-on training for my CEH v13. Cleared my exam on the first attempt!"</p>
-                <div class="flex items-center gap-4">
-                    <div class="h-12 w-12 rounded-full bg-cyan-950 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-400">RK</div>
-                    <div><h4 class="font-bold">Rahul K.</h4><p class="text-xs text-slate-400">Certified Ethical Hacker (CEH)</p></div>
+
+        <div class="relative w-full overflow-hidden">
+            <div class="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+
+            <div class="animate-marquee flex gap-6">
+                
+                <div class="w-80 bg-card border border-slate-800 p-8 rounded-3xl flex-shrink-0 shadow-lg">
+                    <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-slate-300 mb-6 italic text-sm">"SafeByte Security provided exceptional hands-on training for my CEH v13. The soft skills classes helped me ace my HR round!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-cyan-950 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-400 text-xs">RK</div>
+                        <div><h4 class="font-bold text-sm">Rahul K.</h4><p class="text-xs text-slate-400">Certified Ethical Hacker</p></div>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-card border border-slate-800 p-8 rounded-3xl relative">
-                <div class="text-cyan-400 text-3xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
-                <p class="text-slate-300 mb-6 italic">"The SIEM & XDR operations training gave me the exact analytical skills needed to land a top-tier SOC analyst role."</p>
-                <div class="flex items-center gap-4">
-                    <div class="h-12 w-12 rounded-full bg-rose-950 border border-rose-500/30 flex items-center justify-center font-bold text-rose-400">PR</div>
-                    <div><h4 class="font-bold">Priya R.</h4><p class="text-xs text-slate-400">SOC Analyst</p></div>
+
+                <div class="w-80 bg-card border border-slate-800 p-8 rounded-3xl flex-shrink-0 shadow-lg">
+                    <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-slate-300 mb-6 italic text-sm">"The SIEM & XDR operations training gave me the exact analytical skills needed to land a top-tier SOC analyst role."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-rose-950 border border-rose-500/30 flex items-center justify-center font-bold text-rose-400 text-xs">PR</div>
+                        <div><h4 class="font-bold text-sm">Priya R.</h4><p class="text-xs text-slate-400">SOC Analyst</p></div>
+                    </div>
                 </div>
+
+                <div class="w-80 bg-card border border-slate-800 p-8 rounded-3xl flex-shrink-0 shadow-lg">
+                    <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-slate-300 mb-6 italic text-sm">"Incredible trainers with actual enterprise red team experience. The pricing made it accessible and worth every rupee."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-emerald-950 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-400 text-xs">AV</div>
+                        <div><h4 class="font-bold text-sm">Amit V.</h4><p class="text-xs text-slate-400">Penetration Tester</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 bg-card border border-slate-800 p-8 rounded-3xl flex-shrink-0 shadow-lg">
+                    <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-slate-300 mb-6 italic text-sm">"CompTIA Security+ and corporate communication modules were exceptionally structured. Landed a job right after completion!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-purple-950 border border-purple-500/30 flex items-center justify-center font-bold text-purple-400 text-xs">SR</div>
+                        <div><h4 class="font-bold text-sm">Sneha R.</h4><p class="text-xs text-slate-400">Security Analyst</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 bg-card border border-slate-800 p-8 rounded-3xl flex-shrink-0 shadow-lg">
+                    <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-slate-300 mb-6 italic text-sm">"SafeByte Security provided exceptional hands-on training for my CEH v13. The soft skills classes helped me ace my HR round!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-cyan-950 border border-cyan-500/30 flex items-center justify-center font-bold text-cyan-400 text-xs">RK</div>
+                        <div><h4 class="font-bold text-sm">Rahul K.</h4><p class="text-xs text-slate-400">Certified Ethical Hacker</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 bg-card border border-slate-800 p-8 rounded-3xl flex-shrink-0 shadow-lg">
+                    <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-slate-300 mb-6 italic text-sm">"The SIEM & XDR operations training gave me the exact analytical skills needed to land a top-tier SOC analyst role."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-rose-950 border border-rose-500/30 flex items-center justify-center font-bold text-rose-400 text-xs">PR</div>
+                        <div><h4 class="font-bold text-sm">Priya R.</h4><p class="text-xs text-slate-400">SOC Analyst</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 bg-card border border-slate-800 p-8 rounded-3xl flex-shrink-0 shadow-lg">
+                    <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-slate-300 mb-6 italic text-sm">"Incredible trainers with actual enterprise red team experience. The pricing made it accessible and worth every rupee."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-emerald-950 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-400 text-xs">AV</div>
+                        <div><h4 class="font-bold text-sm">Amit V.</h4><p class="text-xs text-slate-400">Penetration Tester</p></div>
+                    </div>
+                </div>
+
+                <div class="w-80 bg-card border border-slate-800 p-8 rounded-3xl flex-shrink-0 shadow-lg">
+                    <div class="text-cyan-400 text-2xl mb-4"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="text-slate-300 mb-6 italic text-sm">"CompTIA Security+ and corporate communication modules were exceptionally structured. Landed a job right after completion!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="h-10 w-10 rounded-full bg-purple-950 border border-purple-500/30 flex items-center justify-center font-bold text-purple-400 text-xs">SR</div>
+                        <div><h4 class="font-bold text-sm">Sneha R.</h4><p class="text-xs text-slate-400">Security Analyst</p></div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -283,7 +544,7 @@
         <div class="bg-card border border-cyan-500/30 rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
             <div class="text-center mb-10">
                 <span class="text-cyan-400 font-bold text-xs uppercase tracking-widest block mb-2">Start Your Cyber Career Today</span>
-                <h2 class="text-3xl font-bold mb-3">Student Lead & Inquiry Form</h2>
+                <h2 class="text-3xl font-bold mb-3">Get in Touch With Us</h2>
                 <p class="text-slate-400 text-sm">Fill out your details below. Our admissions counselor will call you within 2 hours.</p>
             </div>
             
@@ -297,7 +558,7 @@
                     </div>
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Phone Number / WhatsApp</label>
-                        <input type="tel" name="phone" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-cyan-500 text-sm" placeholder="+91 98765 43210">
+                        <input type="tel" name="phone" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-cyan-500 text-sm" placeholder="+91 9866911147">
                     </div>
                 </div>
                 <div class="grid md:grid-cols-2 gap-6">
@@ -308,12 +569,13 @@
                     <div>
                         <label class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Select Course Program</label>
                         <select name="course" class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3.5 text-white focus:outline-none focus:border-cyan-500 text-sm">
-                            <option>CompTIA Security+ (Beginner Foundation)</option>
-                            <option>Certified Ethical Hacker (CEH v13)</option>
-                            <option>Computer Hacking Forensic Investigator (CHFI v11)</option>
-                            <option>Incident Response & SOC Analyst</option>
-                            <option>Vulnerability Management & Assessment</option>
-                            <option>SIEM & XDR Operations</option>
+                            <option>CompTIA Security+ (₹28,000)</option>
+                            <option>Certified Ethical Hacker - CEH v13 (₹35,000)</option>
+                            <option>Computer Hacking Forensic Investigator - CHFI v11 (₹32,000)</option>
+                            <option>Incident Response & SOC Analyst (₹29,000)</option>
+                            <option>Vulnerability Management & Assessment (₹26,000)</option>
+                            <option>SIEM & XDR Operations (₹34,000)</option>
+                            <option>Corporate Soft Skills & Communication (₹15,000)</option>
                             <option>Complete Multi-Course Bundle</option>
                         </select>
                     </div>
@@ -342,10 +604,9 @@
             <p>&copy; 2026 SafeByte Security Training Institute. All rights reserved.</p>
             <div class="flex space-x-6 text-slate-400">
                 <a href="index.html" class="hover:text-cyan-400">Home</a>
-                <a href="comptia-security.html" class="hover:text-cyan-400">Security+</a>
-                <a href="ceh.html" class="hover:text-cyan-400">CEH</a>
-                <a href="chfi.html" class="hover:text-cyan-400">CHFI</a>
-                <a href="incident-response.html" class="hover:text-cyan-400">Incident Response</a>
+                <a href="#courses" class="hover:text-cyan-400">Courses</a>
+                <a href="#testimonials" class="hover:text-cyan-400">Testimonials</a>
+                <a href="#contact" class="hover:text-cyan-400">Contact</a>
             </div>
         </div>
     </footer>
